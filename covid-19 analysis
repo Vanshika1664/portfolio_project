@@ -14,10 +14,10 @@ from PortfoliProject..CovidDeaths$
 --where location like '%india%'
 where continent is not null
 order by 1,2
-select location, date, max(total_cases) as highestcasescount ,max((total_deaths/total_cases))*100 as highestpercentpoplulationinfected
+select location, population, max(total_cases) as highestcasescount ,max((total_deaths/total_cases))*100 as highestpercentpoplulationinfected
 from PortfoliProject..CovidDeaths$
 --where location like '%india%'
-Group by location, date
+Group by location, population
 order by highestpercentpoplulationinfected desc
 
 select location, max(cast (total_deaths as int)) as totaldeathcount
